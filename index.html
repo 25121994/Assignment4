@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Assignment 4</title>
+        <script src="speakHello.js"></script>
+        <script src="speakGoodbye.js"></script>
+        <script scr="script.js"></script>
+    </head>
+    <body>
+        <h1>Solution of assignment 4</h1>
+        <p>Check out the console in the web development tools if it works!</p>
+        <script>
+            (function(window){
+    var hellospeaker=new Object();
+    var speakword="Hello";
+    hellospeaker.speak=function(name){
+        console.log(speakword + " " + name );
+    };
+    window.hellospeaker=hellospeaker;
+})(window);
+        </script>
+        <script>
+        (function(window){
+            var byespeaker=new Object();
+            var speakword="Good bye";
+            byespeaker.speak=function speak(name){
+                console.log(speakword + " " + name);
+        
+            };
+            window.byespeaker= byespeaker;
+        
+        
+        })(window);
+        </script>
+        <script>
+            (function(){
+    var names=["John","yakaav","Jen","Jason","Frank","Laura","Jim"];
+    for(var i=0;i<names.length;i++)
+    {
+        var firstLetter = names[i].charAt(0).toLowerCase();
+        if (firstLetter === 'j') {
+            byespeaker.speak(names[i]);
+        } else {
+            hellospeaker.speak(names[i]);
+        }
+    
+    }
+})();
+
+        </script>
+    </body>
+</html>
